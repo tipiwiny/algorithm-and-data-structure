@@ -1,0 +1,31 @@
+function anagrams(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB)
+}
+
+function cleanString(str) {
+  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+}
+
+module.exports = anagrams;
+
+/*function anagrams(stringA, stringB) {
+  const aCharMap =buildCharMap(stringA);
+  const bCharMap =  buildCharMap(stringB);
+  const lengthA = Object.keys(aCharMap).length;
+  const lengthB = Object.keys(bCharMap).length;
+  if(lengthA != lengthB) return false
+  for(let char in aCharMap) {
+    if(aCharMap[char] ! == bCharMap[char]) return fasle
+  }
+
+  return true;
+
+}
+
+function buildCharMap(str) {
+  const charMap = {}
+  for(let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+    charMap[char] = charMap[char] + 1 || 1
+  }
+  return charMap;
+}*/
